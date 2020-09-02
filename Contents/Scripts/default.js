@@ -9,8 +9,8 @@ include('common.js');
 function formatDevice(device) {
     return {
         badge: device.connected ? `Connected, ${device.rawRSSI} dpm` : 'Disconnected',
-        icon: bestIconOf(device.name),
-        title: device.name,
+        icon: bestIconOf(device.name || device.address),
+        title: device.name || device.address,
         children: showDevice(device),
         action: device.connected ? 'disconnect' : 'connect',
         actionArgument: device,
