@@ -12,7 +12,7 @@ const ICONSET = {
 
 // Item to turn on the bluetooth
 const TURN_ON_BLUETOOTH = {
-    title: 'Trun Bluetooth ON',
+    title: 'Turn Bluetooth ON',
     icon: 'font-awesome:toggle-off',
     action: 'toggleBluetooth',
     actionRunsInBackground: true,
@@ -20,7 +20,7 @@ const TURN_ON_BLUETOOTH = {
 
 // Item to turn on the bluetooth
 const TURN_OFF_BLUETOOTH = {
-    title: 'Trun Bluetooth OFF',
+    title: 'Turn Bluetooth OFF',
     icon: 'font-awesome:toggle-on',
     action: 'toggleBluetooth',
     actionRunsInBackground: true,
