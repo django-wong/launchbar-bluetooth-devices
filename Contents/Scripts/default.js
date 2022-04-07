@@ -25,8 +25,8 @@ function formatDevice(device) {
  * --paired              list paired devices
  * --recent [N]          list recently used devices, 10 by default, 0 to list all
  */
-function listDevices(args = {option: '--recent', arg: '10'}) {
-    const params = [args.option || '--recent'];
+function listDevices(args = {option: '--paired'}) {
+    const params = [args.option || '--paired'];
 
     if (args.arg) {
         params.push(args.arg);
@@ -45,7 +45,7 @@ function run() {
         return [TURN_ON_BLUETOOTH];
     }
 
-    const args = { option: '--recent', arg: '10' };
+    const args = { option: '--paired'};
     if (LaunchBar.options.commandKey) {
         args.option = '--inquiry';
     }
@@ -128,7 +128,7 @@ function isBluetoothOn() {
  * @param      {device}  device  The device
  */
 function disconnect(device) {
-    LaunchBar.execute(BLUEUTIL, '--disconnect', device.address);
+    LaunchBar.execute(BLUEUTIL, '--disconnect', device.address, '--wait-disconnect', device.address);
     LaunchBar.hide();
     LaunchBar.displayNotification({
         title: device.name,
